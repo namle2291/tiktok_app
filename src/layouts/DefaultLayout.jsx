@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import Content from "../components/Content";
 
 export default function DefaultLayout() {
   return (
@@ -8,8 +9,9 @@ export default function DefaultLayout() {
       <div>
         <Header />
       </div>
-      <div>
+      <div className="flex">
         <Sidebar />
+        <Content />
       </div>
     </>
   );
