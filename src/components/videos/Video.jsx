@@ -30,6 +30,30 @@ function Video() {
               <span>110.5K</span>
             </div>
           </div>
+          <div className="">
+            <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
+              <HeartIcon width="25px" />
+            </div>
+            <div className="text-center text-[12px] font-semibold">
+              <span>110.5K</span>
+            </div>
+          </div>
+          <div className="">
+            <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
+              <HeartIcon width="25px" />
+            </div>
+            <div className="text-center text-[12px] font-semibold">
+              <span>110.5K</span>
+            </div>
+          </div>
+          <div className="">
+            <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
+              <HeartIcon width="25px" />
+            </div>
+            <div className="text-center text-[12px] font-semibold">
+              <span>110.5K</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
