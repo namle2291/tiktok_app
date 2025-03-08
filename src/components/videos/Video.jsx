@@ -1,6 +1,10 @@
 import React from "react";
 import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
+import { BiMessageRoundedDots } from "react-icons/bi";
+import { BiSolidLabel } from "react-icons/bi";
+import { BsShareFill } from "react-icons/bs";
+
 import HeartIcon from "../../icons/HeartIcon";
 
 function Video({ data }) {
@@ -35,7 +39,7 @@ function Video({ data }) {
           </div>
           <div className="">
             <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
-              <HeartIcon width="25px" />
+              <BiMessageRoundedDots className="text-[25px]" />
             </div>
             <div className="text-center text-[12px] font-semibold">
               <span>110.5K</span>
@@ -43,7 +47,7 @@ function Video({ data }) {
           </div>
           <div className="">
             <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
-              <HeartIcon width="25px" />
+              <BiSolidLabel className="text-[25px]" />
             </div>
             <div className="text-center text-[12px] font-semibold">
               <span>110.5K</span>
@@ -51,7 +55,7 @@ function Video({ data }) {
           </div>
           <div className="">
             <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
-              <HeartIcon width="25px" />
+              <BsShareFill />
             </div>
             <div className="text-center text-[12px] font-semibold">
               <span>110.5K</span>
