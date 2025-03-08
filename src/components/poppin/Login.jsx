@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, EyeOff, Eye, ChevronLeft } from 'lucide-react';
+import httpRequest from '../../axios/htttpRequest';
 
 export default function Login({ toggleModal }) {
     const [showLoginOptions, setShowLoginOptions] = useState(true);
@@ -62,9 +63,16 @@ const LoginSection = ({ toggleLoginSection }) => {
         setCredentials(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Login attempted with:', credentials);
+
+        const result = await httpRequest.post("/api/auth/login",
+            {
+                email: credentials.identifier,
+                password: credentials.password,
+            }
+        )
+
     };
 
     const togglePasswordVisibility = () => {
