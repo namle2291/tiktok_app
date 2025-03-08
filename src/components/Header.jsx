@@ -22,7 +22,10 @@ export default function Header() {
         </div>
       </div>
       <div className="">
-        <Button content="Đăng nhập" className="bg-[#fe2c55] text-white p-[6px] outline-none rounded-md w-[100px]"/>
+        <Button
+          content="Đăng nhập"
+          className="bg-[#fe2c55] text-white p-[6px] outline-none rounded-md w-[100px]"
+        />
       </div>
     </div>
   );
