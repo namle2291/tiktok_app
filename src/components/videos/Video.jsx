@@ -1,21 +1,24 @@
 import React from "react";
+import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
 import HeartIcon from "../../icons/HeartIcon";
 
-function Video() {
+function Video({ data }) {
   return (
     <div className="flex justify-center mb-[10px]">
       <div className="flex items-end gap-[20px]">
-        <div className="rounded-md overflow-hidden border w-[500px] h-[700px] bg-slate-50"></div>
+        <div
+          className={clsx(
+            `rounded-md overflow-hidden border w-[${data.meta.video.resolution_x}] h-[${data.meta.video.resolution_y}] bg-slate-50`
+          )}
+        >
+          <video src={data?.file_url} muted controls></video>
+        </div>
         <div className="flex flex-col w-[48px] gap-[25px]">
           {/* User follow */}
           <div className="relative">
             <div className="w-[46px] h-[46px] overflow-hidden rounded-full border">
-              <img
-                className="object-cover"
-                src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
-                alt=""
-              />
+              <img className="object-cover" src={data.user.avatar} alt="" />
             </div>
             <div className="w-[24px] h-[24px] absolute left-[50%] bottom-[-10px] translate-x-[-50%] bg-[#fe2c55] text-white rounded-full flex justify-center items-center cursor-pointer">
               <FiPlus />
