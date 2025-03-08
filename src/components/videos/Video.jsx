@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
 import { BiMessageRoundedDots } from "react-icons/bi";
@@ -9,15 +9,19 @@ import HeartIcon from "../../icons/HeartIcon";
 
 function Video({ data }) {
   return (
-    <div className="flex justify-center mb-[10px]">
-      {data.id}
-      <div className="flex items-end gap-[20px]">
+    <div className="flex justify-center mb-[30px] h-full">
+      <div className="flex items-center gap-[20px]">
         <div
           className={clsx(
-            `rounded-md overflow-hidden border w-[${data.meta.video.resolution_x}] h-[${data.meta.video.resolution_y}] bg-slate-50`
+            `rounded-xl overflow-hidden max-w-[1152px] w-[${data.meta.video.resolution_x}] h-full flex items-center`
           )}
         >
-          <video src={data?.file_url} muted controls></video>
+          <video
+            className="rounded-xl"
+            src={data?.file_url}
+            muted
+            controls
+          ></video>
         </div>
         <div className="flex flex-col w-[48px] gap-[25px]">
           {/* User follow */}
@@ -35,7 +39,7 @@ function Video({ data }) {
               <HeartIcon width="25px" />
             </div>
             <div className="text-center text-[12px] font-semibold">
-              <span>110.5K</span>
+              <span>{data.likes_count}</span>
             </div>
           </div>
           <div className="">
@@ -43,12 +47,12 @@ function Video({ data }) {
               <BiMessageRoundedDots className="text-[25px]" />
             </div>
             <div className="text-center text-[12px] font-semibold">
-              <span>110.5K</span>
+              <span>{data.comments_count}</span>
             </div>
           </div>
           <div className="">
             <div className="w-[46px] h-[46px] overflow-hidden rounded-full border bg-[#1618230f] flex justify-center items-center">
-              <BiSolidLabel className="text-[25px]" />
+              <BiSolidLabel className="text-[25px] rotate-[-90deg]" />
             </div>
             <div className="text-center text-[12px] font-semibold">
               <span>110.5K</span>
@@ -59,7 +63,7 @@ function Video({ data }) {
               <BsShareFill />
             </div>
             <div className="text-center text-[12px] font-semibold">
-              <span>110.5K</span>
+              <span>{data.shares_count}</span>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Video from "./videos/Video";
 import htttpRequest from "../axios/htttpRequest";
 
@@ -18,13 +18,14 @@ function Content() {
   }
 
   async function getVideos() {
-    const result = await htttpRequest.get("/api/videos?type=following&page=1");
+    const result = await htttpRequest.get("/api/videos?type=following&page=2");
     setVideos(result?.data.data);
   }
 
   return (
     <div className="h-[calc(100vh-60px)] py-[20px] px-[20px]  flex-1 overflow-y-auto">
-      {videos.length > 0 && videos.map((data) => <Video data={data} />)}
+      {videos.length > 0 &&
+        videos.map((data) => <Video key={data.id} data={data} />)}
     </div>
   );
 }
