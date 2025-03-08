@@ -10,6 +10,7 @@ import HeartIcon from "../../icons/HeartIcon";
 function Video({ data }) {
   return (
     <div className="flex justify-center mb-[10px]">
+      {data.id}
       <div className="flex items-end gap-[20px]">
         <div
           className={clsx(

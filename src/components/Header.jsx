@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import Button from "./buttons/Button";
+import Login from "./poppin/Login";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+  }, [isOpen]);
+
   return (
     <div className="pl-[16px] pr-[24px] border border-grey-500 h-[60px] flex justify-between items-center">
       <div className="w-[118px]">
@@ -12,7 +18,7 @@ export default function Header() {
           alt=""
         />
       </div>
-      <div className="w-[516px] rounded-3xl bg-slate-100  pl-[16px] flex items-center overflow-hidden">
+      <div className="w-[516px] rounded-3xl bg-slate-100 pl-[16px] flex items-center overflow-hidden">
         <input
           className="w-full outline-none text-gray-600 bg-transparent border-e"
           type="text"
@@ -24,9 +30,11 @@ export default function Header() {
       <div className="">
         <Button
           content="Đăng nhập"
-          className="bg-[#fe2c55] text-white p-[6px] outline-none rounded-md w-[100px]"
+          className="bg-[#fe2c55] text-white p-[6px] outline-none rounded-full w-[100px]"
+          onClick={() => { setIsOpen(true) }}
         />
       </div>
+      {isOpen && <Login toggleModal={setIsOpen} />}
     </div>
   );
 }
